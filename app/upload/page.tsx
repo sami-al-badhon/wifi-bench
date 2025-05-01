@@ -13,7 +13,7 @@ export default function AvatarUploadPage() {
   return (
     <div className="flex flex-col items-center  mt-[30%] md:mt-16">
       <h1 className="text-center text-4xl mt-8 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-        Upload Your Avatar
+        Upload New Image
       </h1>
 
       <form

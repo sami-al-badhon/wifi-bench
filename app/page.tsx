@@ -2,7 +2,6 @@ import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 
-import InstallPrompt from '@/components/InstallPrompt';
 import Images from '@/components/Images';
 
 export default async function Home() {
@@ -29,8 +28,6 @@ export default async function Home() {
         </Link>
         <p>Created at 2025</p>
       </footer>
-
-      <InstallPrompt />
     </div>
   );
 }
