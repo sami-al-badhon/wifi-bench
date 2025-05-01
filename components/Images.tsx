@@ -58,10 +58,9 @@ const Images = () => {
               priority
               className="rounded-sm"
               src={img.url}
-              // placeholder="blur"
+              placeholder="blur"
               alt="image"
-              // loading="lazy"
-              // blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..."
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..."
               width={1000}
               height={1000}
             />

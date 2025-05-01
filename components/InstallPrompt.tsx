@@ -14,12 +14,16 @@ const InstallPrompt = () => {
       e.preventDefault();
       deferredPrompt = e as BeforeInstallPromptEvent;
 
-      deferredPrompt.prompt();
-      // if (confirm('Do you want to install this app?')) {
-      //   deferredPrompt.userChoice.then(choiceResult => {
-      //     console.log('User choice:', choiceResult.outcome);
-      //   });
-      // }
+      // Now you can safely call prompt
+      deferredPrompt.prompt().then(() => {
+        deferredPrompt?.userChoice.then(choiceResult => {
+          if (choiceResult.outcome === 'accepted') {
+            console.log('User accepted the install prompt');
+          } else {
+            console.log('User dismissed the install prompt');
+          }
+        });
+      });
     };
 
     window.addEventListener('beforeinstallprompt', handler);
