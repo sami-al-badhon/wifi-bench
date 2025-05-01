@@ -55,12 +55,10 @@ const Images = () => {
         <div key={img.pathname} className="flex flex-col items-center">
           <div className="border-[3] border-dashed border-gray-300 rounded-sm p-1">
             <Image
+              priority
               className="rounded-sm"
               src={img.url}
-              placeholder="blur"
               alt="image"
-              loading="lazy"
-              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..."
               width={1000}
               height={1000}
             />
