@@ -1,16 +1,11 @@
-import Image from 'next/image';
-import img1 from '@/public/img1.jpg';
-import img2 from '@/public/img2.jpg';
-
-import dashedImg from '@/public/dashed-img2.svg';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
-import BottomLottie from '@/components/Animation';
 
-const allImg = [img1, img2];
+import InstallPrompt from '@/components/InstallPrompt';
+import Images from '@/components/Images';
 
-export default function Home() {
+export default async function Home() {
   return (
     <div>
       <main className="min-h-screen">
@@ -20,30 +15,7 @@ export default function Home() {
         <h1 className="text-center text-5xl mt-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
           Welcome to Wifi Bench!
         </h1>
-        <div className="flex flex-col md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-4 lg:gap-6 justify-center gap-2 p-4 mt-4">
-          {allImg.map((img, index) => {
-            return (
-              <div key={index} className="flex flex-col  items-center">
-                <div className="border-[3] border-dashed  border-gray-300 rounded-sm p-1">
-                  {' '}
-                  <Image
-                    className="rounded-sm"
-                    src={img}
-                    placeholder="blur"
-                    alt={`img-${index}`}
-                  />{' '}
-                </div>
-                {allImg.length - 1 <= index ? null : (
-                  <Image
-                    className="mt-2 md:hidden "
-                    src={dashedImg}
-                    alt="dashed"
-                  />
-                )}
-              </div>
-            );
-          })}
-        </div>
+        <Images />
       </main>
       <footer
         className="bg-gray-900   text-center 
@@ -57,7 +29,8 @@ export default function Home() {
         </Link>
         <p>Created at 2025</p>
       </footer>
-      <BottomLottie />
+
+      <InstallPrompt />
     </div>
   );
 }
