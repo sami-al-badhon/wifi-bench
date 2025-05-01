@@ -14,12 +14,12 @@ const InstallPrompt = () => {
       e.preventDefault();
       deferredPrompt = e as BeforeInstallPromptEvent;
 
-      if (confirm('Do you want to install this app?')) {
-        deferredPrompt.prompt();
-        deferredPrompt.userChoice.then(choiceResult => {
-          console.log('User choice:', choiceResult.outcome);
-        });
-      }
+      deferredPrompt.prompt();
+      // if (confirm('Do you want to install this app?')) {
+      //   deferredPrompt.userChoice.then(choiceResult => {
+      //     console.log('User choice:', choiceResult.outcome);
+      //   });
+      // }
     };
 
     window.addEventListener('beforeinstallprompt', handler);
